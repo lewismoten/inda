@@ -30,9 +30,7 @@
     describe('dynamic initialization', () => {
 
       let expectedValue = 42,
-        spy = jasmine.createSpy('callback'),
-        callback = typeof spy.and === 'undefined' ?
-          spy.andReturn(expectedValue) : spy.and.returnValue(expectedValue),
+        callback = jasmine.createSpy('callback').andReturn(expectedValue),
         result = target(callback, 1);
 
       it('called function', () => {
@@ -121,6 +119,26 @@
           ));
 
       });
+
+    });
+
+    describe('many dimensional array', () => {
+
+      let dimensions = 12,
+        initialValue = 42,
+        dimensionSize = 1,
+        result = target(initialValue, ...target(dimensionSize, dimensions)),
+        count = 0;
+
+      while(result.length === dimensionSize) {
+
+        count++;
+        result = result[0];
+
+      }
+
+      expect(count).toBe(dimensions);
+      expect(result).toBe(initialValue);
 
     });
 
