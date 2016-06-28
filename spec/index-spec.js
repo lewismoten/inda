@@ -27,6 +27,27 @@
 
     });
 
+    describe('assignments', () => {
+
+      it('assigns function', () => {
+        let fn = () => 3,
+          callback = () => fn,
+          result = target(callback, 1);
+
+        expect(result[0]).toBe(fn);
+
+      });
+
+      it('assigns undefined', () => {
+        let v,
+          result = target(v, 1);
+
+        expect(result[0]).not.toBeDefined();
+
+      });
+
+    })
+
     describe('dynamic initialization', () => {
 
       let expectedValue = 42,
