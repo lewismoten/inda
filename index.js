@@ -4,15 +4,15 @@
 
   module.exports = initializedArray;
 
-  function initializedArray(value, count, ...dimensions) {
+  function initializedArray(value, size, ...sizes) {
 
     const result = [];
 
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < size; i++) {
 
-      if (dimensions.length > 0) {
+      if (sizes.length > 0) {
 
-        result[i] = initializedArray(value, ...dimensions);
+        result[i] = initializedArray(value, ...sizes);
 
       } else {
 
