@@ -46,3 +46,7 @@ var inda = require('inda');
 
 ## Links
 - Github: [inda](https://github.com/lewismoten/inda)
+
+## License
+
+ISC. See [LICENSE.md](LICENSE.md).
