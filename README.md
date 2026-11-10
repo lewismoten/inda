@@ -1,3 +1,5 @@
+![inda: multi-dimensional arrays nested brackets](docs/images/social-preview.png)
+
 # Initialize new dimensional array
 
 Create a new multi-dimensional array with initialized values.
